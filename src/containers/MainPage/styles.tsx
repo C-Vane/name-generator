@@ -6,7 +6,9 @@ export const PageWrapper = styled.div`
   justify-content: center;
   flex-direction: row;
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 5vh;
   background-color: #0c0b13;
 `;
 

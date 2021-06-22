@@ -1,4 +1,4 @@
-import {apiName} from "../../src/services";
+import { apiName } from "../../src/services";
 import { randomNamesSaga } from "../../src/sagas/randomNames.saga";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
@@ -20,9 +20,9 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const initialAction = {
   type: NamesActionIds.TOGGLE_NAMES,
-  payload:{names:[]}
+  payload: { names: [] }
 };
-      
+
 describe("toggleRandomNamesSaga", () => {
   before(() => {
     sandbox = sinon.createSandbox();
@@ -46,7 +46,7 @@ describe("toggleRandomNamesSaga", () => {
       store.dispatch,
       initialAction
     );
-    expect(randomNamesGeneratorSpy.calledOnceWith()).to.be;
+    expect(randomNamesGeneratorSpy.calledOnceWith()).to.be.true;
 
     expect(dispatchedActions).to.deep.include(
       namesUpdateAction(listNames)

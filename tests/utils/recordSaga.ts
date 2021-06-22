@@ -1,9 +1,9 @@
 import { stdChannel, runSaga } from "redux-saga";
-import { ApiAnimation,ApiNames } from "../../src/services";
+import { ApiAnimation, ApiNames } from "../../src/services";
 
 export async function recordSaga(
   saga: any,
-  api: ApiAnimation|ApiNames,
+  api: ApiAnimation | ApiNames,
   dispatch: any,
   initialAction: { type: string; payload: any }
 ) {
@@ -19,6 +19,7 @@ export async function recordSaga(
     dispatch
   );
   channel.put(initialAction);
+  // @ts-ignore
   await task.toPromise().done;
   return dispatched;
 }

@@ -1,4 +1,4 @@
-import {apiAnimation} from "../../src/services";
+import { apiAnimation } from "../../src/services";
 import { toggleRotationSaga } from "../../src/sagas/toggleRotation.saga";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
@@ -47,8 +47,7 @@ describe("toggleRotationSaga", () => {
       initialAction
     );
 
-    expect(toggleRotationSpy.calledOnceWith(initialAction.payload.isRotating))
-      .to.be.true;
+    expect(toggleRotationSpy.calledOnceWith(initialAction.payload.isRotating)).to.be.true;
     expect(dispatchedActions).to.deep.include(
       animationsUpdateIsRotatingAction(expectedIsRotatingFlag)
     );
